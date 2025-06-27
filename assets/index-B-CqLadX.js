@@ -808,7 +808,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 
   .opened & > svg {
     transform: rotate(180deg);
-    /* animation: ${rotate} 1s ease-in-out both; */
   }
 
   & .tooltip {
