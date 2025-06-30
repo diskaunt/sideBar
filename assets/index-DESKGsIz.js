@@ -678,7 +678,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   font-weight: bold;
   overflow: hidden;
   color: ${c=>c.theme.color==="light"?"var(--color-text-light-default)":"var(--color-text-dark-default)"};
-  transition: width ease-in-out 0.3s, color ease-in-out 0.3s, background-color ease-in-out 0.3s;
+  transition: width ease-in-out 0.3s, color ease-in-out 0.3s,
+    background-color ease-in-out 0.3s;
   cursor: pointer;
 
   &:hover {
@@ -759,7 +760,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     width: 0;
   }
 
-  & Button {
+  & > Button {
     padding: 10px;
     border-radius: 15px;
     background-color: ${c=>c.theme.color==="light"?"var(--color-sidebar-background-light-hover)":"var(--color-sidebar-background-dark-hover)"};
@@ -771,6 +772,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   font-size: inherit;
   font-weight: inherit;
   color: inherit;
+  transition: all ease-in-out 0.3s;
+
   &:hover {
     color: ${c=>c.theme.color==="light"?"var(--color-text-light-hover)":"var(--color-text-dark-hover)"};
   }
