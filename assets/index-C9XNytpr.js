@@ -580,7 +580,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 		display: inline-block;
 		overflow: hidden;
 		width: fit-content;
-		opacity: 1;
 	}
 
 	99% {
@@ -679,7 +678,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   font-weight: bold;
   overflow: hidden;
   color: ${c=>c.theme.color==="light"?"var(--color-text-light-default)":"var(--color-text-dark-default)"};
-  transition: width ease-in-out 0.3s;
+  transition: width ease-in-out 0.3s, color ease-in-out 0.3s, background-color ease-in-out 0.3s;
   cursor: pointer;
 
   &:hover {
@@ -710,6 +709,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     transition: all ease-in-out 0.3s;
   }
 
+  .opened &:hover {
+    overflow: auto;
+  }
+
   .opened & > span {
     position: absolute;
     opacity: 0;
@@ -718,11 +721,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     padding: 7px;
     border-radius: 15px;
     pointer-events: none;
+    transition: all ease-in-out 0.3s;
     animation: ${BT} 0.3s ease-in-out both;
-  }
-
-  .opened &:hover {
-    overflow: auto;
   }
 
   .opened &:hover > span {
@@ -742,7 +742,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   font-weight: bold;
   color: ${c=>c.theme.color==="light"?"var(--color-text-light-default)":"var(--color-text-dark-default)"};
   cursor: default;
-  transition: all linear 0.3s;
+  transition: all ease-in-out 0.3s;
 
   & > span {
     display: inline-block;
